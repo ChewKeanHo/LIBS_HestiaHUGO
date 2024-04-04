@@ -1,0 +1,292 @@
+[Image]
+Name = 'Alternate message here'
+Decorative = false
+Loading = 'lazy'
+Width = '4096'
+Height = '2160'
+CORS = 'anonymous'
+Relationship = ''
+Design = ''
+Preload = ''
+Control = false
+Autoplay = false
+Loop = false
+Mute = false
+Inline = false
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_320x320.avif'
+Type = 'image/avif'
+Media = '(aspect-ratio: 1) and (max-width: 320px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_320x320.webp'
+Type = 'image/webp'
+Media = '(aspect-ratio: 1) and (max-width: 320px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_320x320.jpg'
+Type = 'image/jpeg'
+Media = '(aspect-ratio: 1) and (max-width: 320px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_180x320.avif'
+Type = 'image/avif'
+Media = '(orientation: portrait) and (max-height: 320px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_180x320.webp'
+Type = 'image/webp'
+Media = '(orientation: portrait) and (max-height: 320px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_180x320.jpg'
+Type = 'image/jpeg'
+Media = '(orientation: portrait) and (max-height: 320px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_320x180.avif'
+Type = 'image/avif'
+Media = '(orientation: landscape) and (max-width: 320px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_320x180.webp'
+Type = 'image/webp'
+Media = '(orientation: landscape) and (max-width: 320px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_320x180.jpg'
+Type = 'image/jpeg'
+Media = '(orientation: landscape) and (max-width: 320px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_640x640.avif'
+Type = 'image/avif'
+Media = '(aspect-ratio: 1) and (min-width: 321px) and (max-width: 640px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_640x640.webp'
+Type = 'image/webp'
+Media = '(aspect-ratio: 1) and (min-width: 321px) and (max-width: 640px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_640x640.jpg'
+Type = 'image/jpeg'
+Media = '(aspect-ratio: 1) and (min-width: 321px) and (max-width: 640px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_360x640.avif'
+Type = 'image/avif'
+Media = '(orientation: portrait) and (min-height: 321px) and (max-height: 640px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_360x640.webp'
+Type = 'image/webp'
+Media = '(orientation: portrait) and (min-height: 321px) and (max-height: 640px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_360x640.jpg'
+Type = 'image/jpeg'
+Media = '(orientation: portrait) and (min-height: 321px) and (max-height: 640px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_640x360.avif'
+Type = 'image/avif'
+Media = '(orientation: landscape) and (min-width: 321px) and (max-width: 640px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_640x360.webp'
+Type = 'image/webp'
+Media = '(orientation: landscape) and (min-width: 321px) and (max-width: 640px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_640x360.jpg'
+Type = 'image/jpeg'
+Media = '(orientation: landscape) and (min-width: 321px) and (max-width: 640px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_1080x1080.avif'
+Type = 'image/avif'
+Media = '(aspect-ratio: 1) and (min-width: 641px) and (max-width: 1080px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_1080x1080.webp'
+Type = 'image/webp'
+Media = '(aspect-ratio: 1) and (min-width: 641px) and (max-width: 1080px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_1080x1080.jpg'
+Type = 'image/jpeg'
+Media = '(aspect-ratio: 1) and (min-width: 641px) and (max-width: 1080px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_1080x1920.avif'
+Type = 'image/avif'
+Media = '(orientation: portrait) and (min-height: 641px) and (max-height: 1920px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_1080x1920.webp'
+Type = 'image/webp'
+Media = '(orientation: portrait) and (min-height: 641px) and (max-height: 1920px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_1080x1920.jpg'
+Type = 'image/jpeg'
+Media = '(orientation: portrait) and (min-height: 641px) and (max-height: 1920px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_1080x2048.avif'
+Type = 'image/avif'
+Media = '(orientation: portrait) and (min-height: 641px) and (max-height: 2048px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_1080x2048.webp'
+Type = 'image/webp'
+Media = '(orientation: portrait) and (min-height: 641px) and (max-height: 2048px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_1080x2048.jpg'
+Type = 'image/jpeg'
+Media = '(orientation: portrait) and (min-height: 641px) and (max-height: 2048px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_1920x1080.avif'
+Type = 'image/avif'
+Media = '(orientation: landscape) and (min-width: 641px) and (max-width: 1920px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_1920x1080.webp'
+Type = 'image/webp'
+Media = '(orientation: landscape) and (min-width: 641px) and (max-width: 1920px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_1920x1080.jpg'
+Type = 'image/jpeg'
+Media = '(orientation: landscape) and (min-width: 641px) and (max-width: 1920px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_2048x2048.avif'
+Type = 'image/avif'
+Media = '(aspect-ratio: 1) and (min-width: 1921px) and (max-width: 2048px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_2048x2048.webp'
+Type = 'image/webp'
+Media = '(aspect-ratio: 1) and (min-width: 1921px) and (max-width: 2048px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_2048x2048.jpg'
+Type = 'image/jpeg'
+Media = '(aspect-ratio: 1) and (min-width: 1921px) and (max-width: 2048px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_2048x1080.avif'
+Type = 'image/avif'
+Media = '(orientation: landscape) and (min-width: 1921px) and (max-width: 2048px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_2048x1080.webp'
+Type = 'image/webp'
+Media = '(orientation: landscape) and (min-width: 1921px) and (max-width: 2048px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_2048x1080.jpg'
+Type = 'image/jpeg'
+Media = '(orientation: landscape) and (min-width: 1921px) and (max-width: 2048px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_4096x4096.avif'
+Type = 'image/avif'
+Media = '(aspect-ratio: 1) and (min-width: 2049px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_4096x4096.webp'
+Type = 'image/webp'
+Media = '(aspect-ratio: 1) and (min-width: 2049px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_4096x4096.jpg'
+Type = 'image/jpeg'
+Media = '(aspect-ratio: 1) and (min-width: 2049px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_2160x4096.avif'
+Type = 'image/avif'
+Media = '(orientation: portrait) and (min-height: 2049px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_2160x4096.webp'
+Type = 'image/webp'
+Media = '(orientation: portrait) and (min-height: 2049px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_2160x4096.jpg'
+Type = 'image/jpeg'
+Media = '(orientation: portrait) and (min-height: 2049px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_4096x2160.avif'
+Type = 'image/avif'
+Media = '(orientation: landscape) and (min-width: 2049px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_4096x2160.webp'
+Type = 'image/webp'
+Media = '(orientation: landscape) and (min-width: 2049px)'
+Descriptor = '1x'
+
+[[Image.Sources]]
+URL = '/img/fillers/cafe/gallery-01_4096x2160.jpg'
+Type = 'image/jpeg'
+Media = '(orientation: landscape) and (min-width: 2049px)'
+Descriptor = '1x'
+
+
+[Image.Tracks.en]
+URL = ''
+Kind = 'subtitles'
+Label = 'English'
+Default = false

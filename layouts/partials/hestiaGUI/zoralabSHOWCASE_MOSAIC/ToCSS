@@ -1,0 +1,167 @@
+{{- /*
+Copyright 2024 "Holloway" Chew, Kean Ho <kean.ho.chew@zoralab.com>
+Copyright 2024 DSGN Development Sdn. Bhd. <dsgn@dsgn.com.my>
+Copyright 2024 ZORALab Enterprise <tech@zoralab.com>
+Copyright 2024 Max Kurapov (https://codepen.io/mkurapov/pen/qNQXxz)
+Copyright 2024 Elpeeda (https://codepen.io/Mahe76/pen/PoyWvXX)
+
+
+DSGN Development Sdn. Bhd. Proprietary License 1.0
+
+Licensed under DSGN Development Sdn. Bhd. Proprietary License (the “License”);
+you may ONLY use this file except in compliance with the License.
+
+All information contained herein is, and remains the property of
+DSGN Development Sdn. Bhd. and its suppliers, if any. The intellectual and
+technical concepts contained herein are proprietary to ZORALab Enterprise and
+its suppliers and may be covered by Malaysia Patent Law, patents in process,
+and are protected by trade secret or copyright law. Dissemination of this
+information or reproduction of this material is strictly forbidden unless prior
+written permission is obtained from DSGN Development Sdn. Bhd.
+*/ -}}
+.showcase.mosaic {
+	position: relative;
+
+	min-width: var(--showcase-mosaic-dimension);
+	width: var(--showcase-mosaic-dimension);
+	max-width: 100%;
+	min-height: var(--showcase-mosaic-dimension);
+	height: var(--showcase-mosaic-dimension);
+	max-height: unset;
+
+	transition: var(--showcase-mosaic-timing);
+}
+
+@property --showcase-mosaic-shadow-rotate-angle {
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: false;
+}
+
+.showcase.mosaic:before,
+.showcase.mosaic:after {
+	content: "";
+	position: absolute;
+	inset: -0.2rem;
+	z-index: -2;
+
+	opacity: 0;
+	background: linear-gradient(var(--showcase-mosaic-shadow-rotate-angle),
+		var(--showcase-mosaic-shadow-gradient-points));
+	animation: ShowcaseMosaicShadowRotate 10s linear infinite;
+}
+
+.showcase.mosaic:after {
+	filter: blur(10px);
+}
+
+@keyframes ShowcaseMosaicShadowRotate {
+	0% {
+		--showcase-mosaic-shadow-rotate-angle: 0deg;
+	}
+	100% {
+		--showcase-mosaic-shadow-rotate-angle: 360deg;
+	}
+}
+
+.showcase.mosaic :is(.text, .background) {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	min-width: 100%;
+	width: 100%;
+	min-height: 100%;
+	height: 100%;
+}
+
+.showcase.mosaic .background {
+	z-index: var(--showcase-mosaic-z-index-background);
+
+	object-fit: var(--showcase-mosaic-background-object-fit);
+}
+
+.showcase.mosaic .text {
+	z-index: var(--showcase-mosaic-z-index-text);
+
+	padding: var(--showcase-mosaic-padding-text);
+
+	background: transparent;
+
+	text-align: left;
+
+	overflow: var(--showcase-mosaic-overflow);
+}
+
+.showcase.mosaic .text :is(h1, h2, h3, h4, h5, h6, p, a) {
+	margin: 0;
+	padding: 0;
+}
+
+.showcase.mosaic .text .pitch {
+	margin: var(--showcase-mosaic-margin-pitch);
+
+	font-style: var(--showcase-mosaic-font-style-pitch);
+	font-weight: var(--showcase-mosaic-font-weight-pitch);
+
+	transition-delay: var(--showcase-mosaic-delay-pitch);
+	transform: translateX(var(--showcase-mosaic-position-pitch));
+}
+
+.showcase.mosaic .text .description {
+	margin: var(--showcase-mosaic-margin-description);
+
+	font-style: var(--showcase-mosaic-font-style-description);
+	font-weight: var(--showcase-mosaic-font-weight-description);
+
+	transition-delay: var(--showcase-mosaic-delay-description);
+	transform: translateX(var(--showcase-mosaic-position-description));
+}
+
+.showcase.mosaic .text .action {
+	position: absolute;
+	left: 50%;
+	bottom: var(--showcase-mosaic-padding-text);
+
+	transition-delay: var(--showcase-mosaic-delay-action);
+	transform: translate(-50%, var(--showcase-mosaic-position-action));
+}
+
+.showcase.mosaic:is(:hover, :focus) {
+	transform: var(--showcase-mosaic-transform-focus);
+}
+
+.showcase.mosaic:is(:hover, :focus):before,
+.showcase.mosaic:is(:hover, :focus):after {
+	opacity: 1;
+}
+
+.showcase.mosaic:is(:hover, :focus) .text {
+	background: var(--showcase-mosaic-background-focus);
+}
+
+.showcase.mosaic:is(:hover, :focus) .text :is(.pitch, .description) {
+	transform: translateX(0);
+}
+
+.showcase.mosaic:is(:hover, :focus) .text .action {
+	transform: translate(-50%, 0);
+}
+
+@media print {
+	.showcase.mosaic:is(:hover, :focus) {
+		transform: scale(1) !important;
+	}
+
+	.showcase.mosaic .text {
+		background: var(--showcase-mosaic-background-focus) !important;
+	}
+
+	.showcase.mosaic .text :is(.pitch, .description) {
+		transform: translateX(0) !important;
+	}
+
+	.showcase.mosaic .text .action {
+		transform: translate(-50%, 0) !important;
+	}
+}

@@ -1,0 +1,6 @@
+[CSS.Variables]
+"--animate-ease-in-position-x" = "0"
+"--animate-ease-in-position-y" = "-50px"
+
+
+"--animate-ease-in-timing-function" = "cubic-bezier(0, 0, 0.58, 1)"

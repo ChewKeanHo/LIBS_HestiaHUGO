@@ -1,0 +1,42 @@
+[CSS.Variables]
+"--showcase-mosaic-dimension" = "300px"
+"--showcase-mosaic-overflow" = "hidden"
+
+"--showcase-mosaic-z-index-text" = "var(--z-index-content)"
+"--showcase-mosaic-z-index-background" = "-1"
+
+
+
+
+"--showcase-mosaic-padding-text" = "1.5rem"
+"--showcase-mosaic-margin-pitch" = "1rem 0 0"
+"--showcase-mosaic-margin-description" = ".5rem 0 0"
+
+
+
+
+"--showcase-mosaic-font-style-pitch" = "italic"
+"--showcase-mosaic-font-style-description" = "normal"
+"--showcase-mosaic-font-weight-pitch" = "800"
+"--showcase-mosaic-font-weight-description" = "normal"
+
+
+
+
+"--showcase-mosaic-background-object-fit" = "cover"
+"--showcase-mosaic-background-focus" = "rgba(2, 2, 2, .75)"
+"--showcase-mosaic-shadow-gradient-points" = "#032146, #C3F2FF, #bab"
+
+
+
+
+"--showcase-mosaic-timing" = ".5s"
+
+"--showcase-mosaic-delay-pitch" = "0s"
+"--showcase-mosaic-delay-description" = ".1s"
+"--showcase-mosaic-delay-action" = "0s"
+
+"--showcase-mosaic-transform-focus" = "scale(1.1)"
+"--showcase-mosaic-position-pitch" = "calc(var(--showcase-mosaic-dimension) * -2)"
+"--showcase-mosaic-position-description" = "calc(var(--showcase-mosaic-dimension) * 2)"
+"--showcase-mosaic-position-action" = "calc(var(--showcase-mosaic-dimension) * 2)"

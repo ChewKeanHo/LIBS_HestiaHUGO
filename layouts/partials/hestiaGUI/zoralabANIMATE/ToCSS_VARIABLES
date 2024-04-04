@@ -1,0 +1,9 @@
+[CSS.Variables]
+"--animation-timing" = ".8s"
+"--animation-delay" = "0s"
+"--animation-fill-mode" = "forwards"
+"--animation-direction" = "normal"
+
+"--animation-timing-function" = "cubic-bezier(0, 0, 0.58, 1)"
+
+"--animation-state-start" = "paused"

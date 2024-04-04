@@ -1,0 +1,195 @@
+{{- /*
+Copyright 2023 "Holloway" Chew, Kean Ho <kean.ho.chew@zoralab.com>
+Copyright 2023 ZORALab Enterprise <tech@zoralab.com>
+
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+                 http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+*/ -}}
+{{- /* INPUT PARAMETERS */ -}}
+{{- /* . = Hugo data structure */ -}}
+
+
+
+
+{{- /* prepare working variables for this function */ -}}
+{{- $Page := . -}}
+{{- $dataList := dict -}}
+{{- $URLFragments := slice -}}
+{{- $URL := false -}}
+{{- $list := false -}}
+{{- $ret := false -}}
+
+
+
+
+{{- /* initialize fundamental data structure */ -}}
+{{- $dataList = dict
+	"Content" dict
+
+
+	"CSS" (dict
+		"Settings" (dict
+			"IncludeFirst" (default false .Site.Data.Hestia.CSS.Settings.Position.IncludeFirst)
+		)
+	)
+
+
+	"JS" (dict
+		"Settings" (dict
+			"IncludeFirst" (default false .Site.Data.Hestia.JS.Settings.Position.IncludeFirst)
+			"Inline" (dict
+				"Timing" (default "defer" .Site.Data.Hestia.JS.Settings.Inline.Timing)
+			)
+		)
+	)
+
+
+	"LDJSON" dict
+
+
+	"Nav" (dict
+		"All" (cond .IsHome .Site.Pages dict)
+		"Children" .Page.Pages
+	)
+
+
+	"Sitemap" (dict
+		"ChangeFreq" (default "" .Page.Sitemap.ChangeFreq)
+		"Priority" (default -1 .Page.Sitemap.Priority)
+		"Filename" "sitemap-page.xml"
+		"Index" "sitemap.xml"
+	)
+
+
+	"WASM" (dict
+		"URL" ""
+		"Setup" ""
+		"Import" ""
+		"Init" ""
+		"Embed" ""
+		"Dependencies" slice
+	)
+-}}
+
+
+
+
+{{- /* process .CSS.List.Inline */ -}}
+{{- $list = slice -}}
+{{- range $i, $v := .Site.Data.Hestia.CSS.List.Inline -}}
+	{{- if not (index $v "Path") -}}
+		{{- continue -}}
+	{{- end -}}
+
+
+	{{- $list = append $v.Path $list -}}
+{{- end -}}
+{{- $dataList = merge $dataList (dict "CSS" (dict "Inline" $list)) -}}
+
+
+
+
+{{- /* parse .CSS.List.Include */ -}}
+{{- $list = slice -}}
+{{- range $i, $v := .Site.Data.Hestia.CSS.List.Include -}}
+	{{- if not (index $v "URL") -}}
+		{{- continue -}}
+	{{- end -}}
+
+
+	{{- $list = append (dict
+		"URL" (default "" $v.URL)
+		"Media" (default "" $v.Media)
+		"OnLoad" (default "" $v.OnLoad)
+	) $list -}}
+{{- end -}}
+{{- $dataList = merge $dataList (dict "CSS" (dict "Include" $list)) -}}
+
+
+
+
+{{- /* parse .JS.Inline */ -}}
+{{- $list = slice -}}
+{{- range $i, $v := .Site.Data.Hestia.JS.List.Inline -}}
+	{{- $ret = index $v "Path" -}}
+	{{- if not $ret -}}
+		{{- continue -}}
+	{{- end -}}
+
+	{{- $list = append $ret $list -}}
+{{- end -}}
+{{- $dataList = merge $dataList (dict "JS" (dict "Inline" $list)) -}}
+
+
+
+
+{{- /* parse .JS.Include */ -}}
+{{- $list = slice -}}
+{{- range $i, $v := .Site.Data.Hestia.JS.List.Include -}}
+	{{- if not (index $v "URL") -}}
+		{{- continue -}}
+	{{- end -}}
+
+	{{- $ret = dict
+		"URL" (default "" $v.URL)
+		"Timing" (default "defer" $v.Timing)
+	-}}
+
+	{{- $list = append $ret $list -}}
+{{- end -}}
+{{- $dataList = merge $dataList (dict "JS" (dict "Include" $list)) -}}
+
+
+
+
+{{- /* parse .Debugger */ -}}
+{{- if and .Site.Data.Hestia.Debugger.Default.Type .Site.IsServer -}}
+	{{- $dataList = merge $dataList (dict
+		"Debugger" (dict
+			"Name" .Site.Data.Hestia.Debugger.Default.Type
+		)
+	) -}}
+{{- end -}}
+
+
+
+
+{{- /* parse .Nav.Parents */ -}}
+{{- $dataList = merge $dataList (dict "Nav" (dict "Parents" slice)) -}}
+{{- if not .IsHome -}}
+	{{- $URL = urls.Parse .Page.Permalink -}}
+	{{- $URL = strings.TrimSuffix "/" $URL.Path -}}
+	{{- $URLFragments = split $URL "/" -}}
+	{{- if not $URLFragments -}}
+		{{- $URLFragments = slice -}}
+	{{- else if and (eq (len $URLFragments) 1) (eq (index $URLFragments 1) "") -}}
+		{{- $URLFragments = slice -}}
+	{{- end -}}
+
+
+	{{- $list = slice -}}
+	{{- $ret = "" -}}
+	{{- range $i, $v := $URLFragments -}}
+		{{- $ret = printf "%s/%s" (strings.TrimPrefix "/" $ret) $v -}}
+		{{- if eq $ret $URL -}}
+			{{- continue -}}
+		{{- end -}}
+		{{- $list = append ($Page.Site.GetPage $ret) $list -}}
+	{{- end -}}
+	{{- $dataList = merge $dataList (dict "Nav" (dict "Parents" $list)) -}}
+{{- end -}}
+
+
+
+
+{{- /* render output */ -}}
+{{- return $dataList -}}
